@@ -2079,7 +2079,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1050,
+        "x": 890,
         "y": 40,
         "wires": []
     },
@@ -2188,8 +2188,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 930,
-        "y": 160,
+        "x": 890,
+        "y": 180,
         "wires": []
     },
     {
@@ -2422,7 +2422,7 @@
         "buckets_prefix": "",
         "buckets_recursive": false,
         "buckets_start_after": "",
-        "x": 650,
+        "x": 670,
         "y": 760,
         "wires": [
             [
@@ -2463,7 +2463,7 @@
         "type": "debug",
         "z": "ce0a80634cfa7f19",
         "name": "S3 OK",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2471,8 +2471,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1090,
-        "y": 620,
+        "x": 1110,
+        "y": 660,
         "wires": []
     },
     {
@@ -2480,7 +2480,7 @@
         "type": "debug",
         "z": "ce0a80634cfa7f19",
         "name": "S3 NOK",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2488,8 +2488,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1100,
-        "y": 800,
+        "x": 1120,
+        "y": 900,
         "wires": []
     },
     {
@@ -2512,7 +2512,7 @@
         "objects_prefix": "",
         "objects_etag": "",
         "objects_datetime": "",
-        "x": 1220,
+        "x": 1160,
         "y": 500,
         "wires": [
             [
@@ -2528,7 +2528,7 @@
         "type": "function",
         "z": "ce0a80634cfa7f19",
         "name": "prepare to PUT",
-        "func": "msg.objectName = msg.payload.timestamp\nmsg.bucketName = 'store'\nmsg.stream = Buffer.from(JSON.stringify(msg.payload));\n\nreturn msg;",
+        "func": "msg.objectName = 'isDone/'+ msg.payload.timestamp\nmsg.bucketName = 'store'\nmsg.stream = Buffer.from(JSON.stringify(msg.payload));\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2561,7 +2561,7 @@
         "repair": false,
         "outputs": 2,
         "x": 750,
-        "y": 700,
+        "y": 660,
         "wires": [
             [
                 "3c832bf49ea57a0b"
@@ -2583,8 +2583,8 @@
         "buckets_prefix": "",
         "buckets_recursive": false,
         "buckets_start_after": "",
-        "x": 890,
-        "y": 740,
+        "x": 970,
+        "y": 800,
         "wires": [
             [
                 "3c832bf49ea57a0b"
@@ -2668,7 +2668,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 840,
+        "x": 860,
         "y": 540,
         "wires": [
             [
@@ -2690,27 +2690,9 @@
         "y": 80,
         "wires": [
             [
-                "383fe45d58e4272b",
-                "ac3b7d66d8200d9a"
+                "383fe45d58e4272b"
             ]
         ]
-    },
-    {
-        "id": "ac3b7d66d8200d9a",
-        "type": "debug",
-        "z": "ce0a80634cfa7f19",
-        "name": "select v",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1060,
-        "y": 100,
-        "wires": []
     },
     {
         "id": "ddf8fb6962532cd1",
@@ -2774,7 +2756,7 @@
         "host": "ea379fd37875fcf3",
         "objects_operation": "removeObjects",
         "objects_bucket": "store",
-        "objects_object": "",
+        "objects_object": "1672306946052",
         "objects_offset": "",
         "objects_length": "",
         "objects_stream": "",
@@ -2782,11 +2764,11 @@
         "objects_metadata": "",
         "objects_sourceobject": "",
         "objects_conditions": "",
-        "objects_objectslist": "[ ]",
-        "objects_prefix": "",
+        "objects_objectslist": "",
+        "objects_prefix": "isDone/",
         "objects_etag": "",
         "objects_datetime": "",
-        "x": 630,
+        "x": 650,
         "y": 840,
         "wires": [
             [
