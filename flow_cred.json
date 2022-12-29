@@ -1,1 +1,12 @@
-{}
+{
+    "4ade2752bb8e0a7b": {
+        "username": "rabbitmq",
+        "password": "rabbitmq"
+    },
+    "ea379fd37875fcf3": {
+        "accessKey": "minio",
+        "secretKey": "minio123"
+    },
+    "99d14acff94723b8": {},
+    "faf5cf03e2407786": {}
+}
